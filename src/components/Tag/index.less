@@ -1,0 +1,28 @@
+/**
+* @name  TAG 二次封装 - 组件 - less
+* @module 组件存放位置
+* @desc 加法运算
+* @param {number}
+* @author ban chi
+* @date 2020/9/4 10:58 上午
+* @version （指定发布版本）
+**/
+
+.ivu-tag-size-large{
+  padding: 0 16px;
+}
+ .ivu-tag{
+  background-color: #f2f5f8;
+  border: 1px solid #f2f5f8;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+
+  /deep/ .ivu-tag-text{
+    color: #849aa4;
+  }
+  &:hover{
+    transition: all ease 0.4s;
+    opacity: 0.7;
+  }
+}

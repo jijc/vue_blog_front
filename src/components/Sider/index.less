@@ -1,0 +1,115 @@
+/**
+* @name  侧边栏 - 组件 - less
+* @module 组件存放位置
+* @desc 加法运算
+* @param {number}
+* @author ban chi
+* @date 2020/9/4 10:58 上午
+* @version （指定发布版本）
+**/
+
+.sider-main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  background: #FFFFFF;
+  height: 100%;
+  border-right: 1px solid #eee;
+  text-align: center;
+
+  .user {
+    padding: 50px 0px;
+
+    .ivu-avatar {
+      width: 70px;
+      height: 70px;
+      cursor: pointer;
+
+      &:hover {
+        transform: rotate(1turn);
+        transition: all 0.6s ease-in;
+      }
+    }
+
+    .nick {
+      margin: 20px 0;
+    }
+
+    .introduction {
+      padding: 0 10px;
+    }
+
+    .links {
+      margin-top: 20px;
+
+      .ivu-icon {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .menu {
+    flex: 1;
+
+    ul {
+      li {
+        height: 50px;
+        margin: 2px 0;
+        transition: all linear 0.4s;
+
+        &:before {
+          transition: all linear 0.4s;
+          width: 4px;
+          height: 100%;
+          content: "";
+          display: inline-block;
+          background: #ffffff;
+        }
+
+        &:hover {
+          background: #e5f1fc;
+
+          &:before {
+            background: #2d8cf0;
+          }
+
+          a {
+            color: #2d8cf0;
+          }
+        }
+
+        a {
+          display: inline-block;
+          vertical-align: top;
+          width: calc(100% - 4px);
+          height: 50px;
+          line-height: 50px;
+          font-size: 16px;
+          color: #4b595f;
+        }
+      }
+
+      .active {
+        background: #e5f1fc;
+
+        &:before {
+          width: 4px;
+          height: 100%;
+          content: "";
+          display: inline-block;
+          background: #2d8cf0;
+        }
+
+        a {
+          color: #2d8cf0;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #888;
+  }
+}

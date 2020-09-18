@@ -1,0 +1,78 @@
+#home {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  height: 100%;
+
+  /deep/ .header {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    height: 59px;
+    line-height: 59px;
+    border-bottom: 1px solid #eee;
+  }
+
+  /deep/ .ivu-layout-content {
+    flex: 1;
+    height: calc(100% - 60px - 60px);
+    background: #FFFFFF;
+
+    .list {
+
+    }
+  }
+
+  /deep/ .ivu-layout-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    padding: 10px 20px;
+    border-top: 1px solid #eee;
+
+    .ivu-input-wrapper {
+      .ivu-input-suffix{
+        width: 40px;
+        cursor: pointer;
+        .ivu-icon {
+          &:before{
+            display: inline-block;
+            width: 40px;
+            height: 39px;
+            line-height: 39px;
+            font-size: 20px;
+          }
+        }
+      }
+
+
+      .ivu-input {
+        height: 39px;
+        padding-left: 10px;
+        padding-right: 45px;
+      }
+    }
+
+    /deep/ .ivu-page {
+      margin-left: 40px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-direction: row;
+
+      .ivu-page-total {
+        white-space: nowrap;
+      }
+
+      .ivu-page-options {
+        .ivu-page-options-elevator {
+          white-space: nowrap;
+        }
+      }
+
+    }
+  }
+
+
+}

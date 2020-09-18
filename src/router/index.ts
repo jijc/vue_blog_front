@@ -1,27 +1,60 @@
 import Vue from 'vue'
+import {LoadingBar} from 'view-design';
 import VueRouter, { RouteConfig } from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../views/Home/index.vue'
 
 Vue.use(VueRouter)
+
+LoadingBar.config({
+  color: '#2d8cf0',
+  height: 4
+});
 
   const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: '/home',
   },
+  {
+    path: '/home',
+    name: 'Home',
+    component: Home,
+    meta:{
+      title:'首页'
+    },
+  },
+  // {
+  //   path: '/detail',
+  //   name: 'Detail',
+  //   // component: Detail,
+  //   meta:{
+  //     title:'详情'
+  //   },
+  // },
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '@/views/About/index.vue'),
+    meta:{
+      title:'关于我'
+    },
   }
 ]
 
 const router = new VueRouter({
   routes
 })
+
+
+router.beforeEach((to, from, next) => {
+  LoadingBar.start();
+  console.log('[ to ]: ', to);
+  console.log('[ from ]: ', from);
+  next();
+});
+
+router.afterEach(route => {
+  LoadingBar.finish();
+});
 
 export default router
